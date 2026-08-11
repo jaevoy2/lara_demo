@@ -36,18 +36,18 @@ class EmployeeController extends Controller
 
 
     public function getAttendances($id) {
-        $emp = Employee::where('id', $id)
+        $employee = Employee::where('id', $id)
             ->with('attendances')
             ->first();
 
-        if(!$emp) {
+        if(!$employee) {
             return response()->json([
                 'message' => 'Employee not found.'
             ], 404);
         }
 
         return response()->json([
-            'data' => $emp
+            'data' => $employee
         ], 200);
     }
 }
