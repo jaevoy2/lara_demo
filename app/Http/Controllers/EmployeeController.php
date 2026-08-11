@@ -42,7 +42,7 @@ class EmployeeController extends Controller
 
         if(!$emp) {
             return response()->json([
-                'message' => 'Employee not found.'
+                'message' => 'Employee missing'
             ], 404);
         }
 
